@@ -9,6 +9,6 @@ server.get(`/`, (req, res) => res.send('hello world'));
 
 server.get(`/search`, (req, res) => res.send({dogSearch}))
 
-server.get(`/lucky`, (req, res) => res.send(`${dogSearch[(Math.floor(Math.random()* 10))]}`))
+server.get(`/lucky`, (req, res) => res.send(JSON.stringify(`${dogSearch[(Math.floor(Math.random()* 10))]}`)))
 
 server.listen(port, () => console.log(`server location at http://localhost:${port}/`))

@@ -4,14 +4,12 @@ console.log(luckyDipButton)
 
 async function getRandomLink(e) {
   e.preventDefault()
-  console.log(e)
 
   fetch(`http://localhost:3000/lucky`)
-    .then(res => res.JSON())
+    .then(res => res.json())
     .then(performLuckyDip)
-
 }
 
 function performLuckyDip(link) {
-  luckyDipButton.location.href = link
+  window.open(link)
 }
