@@ -1,0 +1,25 @@
+
+  #mydiv {
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:150px;
+    height:150px;
+    margin:auto;
+    size: 20px;
+  }
+  a{
+    margin-left: 10%;
+  }
+  #search{
+      size: 3px;
+  }
+  input {
+    border-radius: 20px;
+  }
+  footer {
+    margin-left: 0;
+  }
+  
