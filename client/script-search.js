@@ -9,10 +9,9 @@ function getSearchResults(e) {
 
 async function assignLinks(link) {
   let searchALink;
+  console.log(link[7])
   for (i = 0; i < 10; i++) {
-    console.log(link.dogSearch[i])
     searchALink = document.getElementById(`result${i}`)
-    console.log(searchALink)
-    searchALink.setAttribute('href', `${link.dogSearch[i].toString()}`)
+    searchALink.setAttribute('href', `${link[i].toString()}`)
   }
 }
