@@ -1,10 +1,8 @@
 section {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 body {
-  align-content: center;
-  display: flex;
-  justify-content: center;
+
   width: 80%;
 }
 a {
@@ -12,7 +10,4 @@ a {
 }
 input {
   border-radius: 20px;
-}
-footer {
-  margin-left: 0;
 }
