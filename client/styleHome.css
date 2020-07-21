@@ -5,8 +5,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    width:300px;
-    height:150px;
+    width:400px;
+    height:200px;
     margin:auto;
     size: 20px;
   }
@@ -22,6 +22,9 @@
   footer {
     margin-left: 0;
   }
-  #btn{
+  #luckydip{
     font-size: 20px;
-}
+ }
+ #search-button{
+    font-size: 20px;
+ }
