@@ -9,9 +9,19 @@ function getSearchResults(e) {
 
 async function assignLinks(link) {
   let searchALink;
-  console.log(link[7])
+  fetch(`http://localhost:3000/info`)
+    .then(res => res.json())
+    .then(writeAContent)
   for (i = 0; i < 10; i++) {
     searchALink = document.getElementById(`result${i}`)
-    searchALink.setAttribute('href', `${link[i].toString()}`)
+    searchALink.setAttribute('href', `${link[i]}`)
+  }
+
+}
+
+function writeAContent(info) {
+  for (i = 0; i < 10; i++) {
+    searchALink = document.getElementById(`result${i}`)
+    searchALink.textContent = info[i]
   }
 }
