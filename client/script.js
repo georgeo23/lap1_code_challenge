@@ -1,6 +1,5 @@
 const luckyDipButton = document.getElementById('luckydip')
-luckyDipButton.addEventListener('click', getRandomLink)
-console.log(luckyDipButton)
+luckyDipButton.addEventListener('submit', getRandomLink)
 
 async function getRandomLink(e) {
   e.preventDefault()
@@ -11,5 +10,5 @@ async function getRandomLink(e) {
 }
 
 function performLuckyDip(link) {
-  window.open(link)
+  window.open(link, "_self")
 }
