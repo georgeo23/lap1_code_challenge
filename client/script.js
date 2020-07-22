@@ -18,8 +18,7 @@ function getTextBoxContent(e) {
   showSearch()
   textBoxContent = document.getElementById('search').value
   console.log(textBoxContent)
-  searchPageTextBox = document.getElementById('searched-text')
-  console.log(searchPageTextBox)
+  getSearchResults(textBoxContent)
   }
 
 
@@ -38,26 +37,44 @@ async function getRandomLink(e) {
 function performLuckyDip(link) {
   window.open(link, "_self")
 }
-//////////////////////////////////////////////
 
-getSearchResults()
-function getSearchResults(e) {
 
+function getSearchResults(text) {
+  console.log(text)
+if (text == "dog") {
+  console.log(text)
   fetch(`http://localhost:3000/dogsearch`)
     .then(res => res.json())
     .then(assignLinks)
 }
+else if (text == "car") {
+  fetch(`http://localhost:3000/carsearch`)
+    .then(res => res.json())
+    .then(assignLinks)
+}
+
+}
 
 async function assignLinks(link) {
   let searchALink;
-  fetch(`http://localhost:3000/doginfo`)
-    .then(res => res.json())
-    .then(writeAContent)
-  for (i = 0; i < 10; i++) {
-    searchALink = document.getElementById(`result${i}`)
-    searchALink.setAttribute('href', `${link[i]}`)
+  if (link[0] == "https://en.wikipedia.org/wiki/Dog") {
+      fetch(`http://localhost:3000/doginfo`)
+          .then(res => res.json())
+          .then(writeAContent)
+      for (i = 0; i < 10; i++) {
+          searchALink = document.getElementById(`result${i}`)
+          searchALink.setAttribute('href', `${link[i]}`)
   }
-
+}
+else if (link[0] == "https://www.carmagazine.co.uk/") {
+  fetch(`http://localhost:3000/carinfo`)
+      .then(res => res.json())
+      .then(writeAContent)
+  for (i = 0; i < 10; i++) {
+      searchALink = document.getElementById(`result${i}`)
+      searchALink.setAttribute('href', `${link[i]}`)
+        }
+    }
 }
 
 function writeAContent(info) {
