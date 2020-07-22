@@ -1,15 +1,14 @@
-
 getSearchResults()
 function getSearchResults(e) {
 
-  fetch(`http://localhost:3000/search`)
+  fetch(`http://localhost:3000/dogsearch`)
     .then(res => res.json())
     .then(assignLinks)
 }
 
 async function assignLinks(link) {
   let searchALink;
-  fetch(`http://localhost:3000/info`)
+  fetch(`http://localhost:3000/doginfo`)
     .then(res => res.json())
     .then(writeAContent)
   for (i = 0; i < 10; i++) {
