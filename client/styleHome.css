@@ -1,14 +1,23 @@
 
-  #mydiv {
+  #googleImg {
     position:absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width:400px;
-    height:200px;
+    width:350px;
+    height:400px;
     margin:auto;
-    size: 20px;
+  }
+  #forms{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:500px;
+    height:100px;
+    margin:auto;
   }
   a{
     margin-left: 10%;
@@ -18,13 +27,17 @@
   }
   input {
     border-radius: 20px;
+    padding: 5px;
   }
   footer {
     margin-left: 0;
   }
   #luckydip{
     font-size: 20px;
+    margin: 6px;
+    margin-left: 50px;
  }
  #search-button{
     font-size: 20px;
+    margin-left: 20px;
  }
