@@ -15,6 +15,7 @@ server.get(`/doginfo`, (req, res) => res.send(JSON.stringify(dogSearchInfo)))
 server.get(`/carsearch`, (req, res) => res.send(JSON.stringify(carSearch )))
 server.get(`/carinfo`, (req, res) => res.send(JSON.stringify(carSearchInfo)))
 
-server.get(`/lucky`, (req, res) => res.send(JSON.stringify(`${dogSearch[(Math.floor(Math.random()* 10))]}`)))
+server.get(`/luckydog`, (req, res) => res.send(JSON.stringify(`${dogSearch[(Math.floor(Math.random()* 10))]}`)))
+server.get(`/luckycar`, (req, res) => res.send(JSON.stringify(`${carSearch[(Math.floor(Math.random()* 10))]}`)))
 
 server.listen(port, () => console.log(`server location at http://localhost:${port}/`))

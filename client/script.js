@@ -16,22 +16,31 @@ function hideSearch() {
 }
 function getTextBoxContent(e) {
   showSearch()
+
   textBoxContent = document.getElementById('search').value
-  console.log(textBoxContent)
+  document.querySelector('h3').textContent = `Search results for: ${textBoxContent}`
   getSearchResults(textBoxContent)
   }
 
 
 function showSearch() {
-  homeHTML.setAttribute('style', 'visibility: hidden;')
-  searchHTML.setAttribute('style', 'visibility: visible')
+  // homeHTML.setAttribute('style', 'visibility: hidden;')
+  searchHTML.setAttribute('style', 'visibility: visible; margin-bottom: 20px;')
 }
 async function getRandomLink(e) {
   e.preventDefault()
-
-  fetch(`http://localhost:3000/lucky`)
+  textBoxContent = document.getElementById('search').value
+  console.log(textBoxContent)
+if (textBoxContent == "dog") {
+  fetch(`http://localhost:3000/luckydog`)
     .then(res => res.json())
     .then(performLuckyDip)
+  }
+  else if (textBoxContent == "car") {
+    fetch(`http://localhost:3000/luckycar`)
+      .then(res => res.json())
+      .then(performLuckyDip)
+  }
 }
 
 function performLuckyDip(link) {
@@ -48,11 +57,17 @@ if (text == "dog") {
     .then(assignLinks)
 }
 else if (text == "car") {
+
   fetch(`http://localhost:3000/carsearch`)
     .then(res => res.json())
     .then(assignLinks)
 }
-
+else {
+  for (i = 0; i < 10; i++) {
+    searchALink = document.getElementById(`result${i}`)
+    searchALink.textContent = "No Results"
+      }
+    }
 }
 
 async function assignLinks(link) {
@@ -76,7 +91,6 @@ else if (link[0] == "https://www.carmagazine.co.uk/") {
         }
     }
 }
-
 function writeAContent(info) {
   for (i = 0; i < 10; i++) {
     searchALink = document.getElementById(`result${i}`)
